@@ -2,12 +2,12 @@
 
 namespace Database\Seeders;
 
-use App\Models\gifts;
 use Illuminate\Database\Seeder;
-use Database\Factories\GiftsFactory;
+use Database\Factories\UserFactory;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
-class GiftDatabaseSeeder extends Seeder
+
+class UsersSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -16,7 +16,6 @@ class GiftDatabaseSeeder extends Seeder
      */
     public function run()
     {
-        GiftsFactory::new()->count(50)->create();
+        UserFactory::new()->count(50)->create();
     }
-   
 }

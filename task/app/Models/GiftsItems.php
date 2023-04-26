@@ -5,9 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class campaigns extends Model
+class GiftsItems extends Model
 {
-    protected $table = 'gift_campaigns';
+    // public static function all(){
+        
+    // }
+    
+    protected $table = 'gift_items';
     public $timestamps = false;
     protected $guarded = [];
+    
+    
 }

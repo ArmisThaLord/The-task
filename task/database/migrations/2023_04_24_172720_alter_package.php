@@ -13,13 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('gift_campaigns', function (Blueprint $table) {
-            $table->id();
-            $table->string('gift_item');
-            $table->string('gift_item_count');
-            $table->string('status');
-            $table->date('dispatch_date');
-            $table->date('delivery_date');
+        Schema::table('package', function (Blueprint $table) {
+            $table->foreign('gift_id')->references('id')->on('gift_items');
+            $table->foreign('campaing_id')->references('id')->on('gift_campaigns');
         });
     }
 
@@ -30,6 +26,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('gift_campaigns');
+        //
     }
 };
