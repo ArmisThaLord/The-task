@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\GiftController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/gift',[GiftController::class, 'index'])->name('gift.index');
+Route::get('/gift/create',[GiftController::class, 'create'])->name('gift.create');
+Route::post('/gift',[GiftController::class, 'store'])->name('gift.store');

@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->string('address');
+            $table->enum('role', ['basic','HR','admin'])->default('basic');
         });
     }
 
