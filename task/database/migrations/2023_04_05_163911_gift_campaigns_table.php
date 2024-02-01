@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('status');
             $table->date('dispatch_date');
             $table->date('delivery_date');
+            $table->timestamps();
         });
     }
 

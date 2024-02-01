@@ -13,11 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('gift_items', function (Blueprint $table) {
+        //
+        Schema::create('campaign_ratings', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('unit_price');
-            $table->string('units_owned');
+            $table->foreignId('gift_campaigns_id')->constrained('gift_campaigns');
+            $table->foreignId('users_id')->constrained('users');
+            $table->string('comment');
+            $table->float('rating');
             $table->timestamps();
         });
     }
@@ -29,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        //
     }
 };
